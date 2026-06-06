@@ -29,6 +29,18 @@
       "price": 1000,
       "stock": 1,
       "id": "OsbMSJlMefc"
+    },
+    {
+      "name": "tes 1000",
+      "price": 2000,
+      "stock": 2,
+      "id": "XbgWXVCoqYw"
+    },
+    {
+      "name": "Dd 1000",
+      "price": 2000,
+      "stock": 22,
+      "id": "MZOORO7PT7o"
     }
   ],
   "sales": [],

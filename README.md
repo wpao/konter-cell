@@ -76,3 +76,34 @@ Setelah itu restart:
 Ctrl + C
 pnpm dev
 ```
+
+### buat domine ngrok tetap
+
+//
+Lihat menu:
+Domains
+
+// doctorially-exegetic-kensley.ngrok-free.dev
+// url ini bisa membuat satu port apa saja jadi https ☺️🍋
+// membuat FE localhost:5173 jadi https dan domine tetap
+// jalankan di terminal / base
+ngrok http --url=doctorially-exegetic-kensley.ngrok-free.dev 5173
+
+### perintah melihat structure
+
+// extension VSCode
+Treematic: Project Tree Generator
+
+// hasil
+product
+├── api
+│ └── productApi.ts
+├── components
+│ ├── ProductForm.tsx
+│ └── ProductTable.tsx
+├── hooks
+│ └── useProducts.ts
+├── pages
+│ └── ProductPage.tsx
+└── types
+└── product.ts

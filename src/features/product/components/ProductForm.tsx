@@ -50,7 +50,10 @@ export default function ProductForm({ onSubmit }: Props) {
         onChange={(e) => setStock(Number(e.target.value))}
       />
 
-      <button className="rounded bg-blue-500 px-4 py-2 text-white">
+      <button
+        className="rounded bg-blue-500 px-4 py-2 text-white"
+        type="submit"
+      >
         Simpan
       </button>
     </form>
