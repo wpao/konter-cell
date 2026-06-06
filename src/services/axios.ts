@@ -11,7 +11,11 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:3001",
+  // local development
+  // baseURL: "http://localhost:3001",
+
+  // ngrok for development CRUD
+  baseURL: "/api",
   headers: {
     "Content-Type": "application/json",
   },

@@ -23,6 +23,12 @@
       "price": 7000,
       "stock": 1,
       "id": "WAxDdaihkTI"
+    },
+    {
+      "name": "Hahs 100",
+      "price": 1000,
+      "stock": 1,
+      "id": "OsbMSJlMefc"
     }
   ],
   "sales": [],
