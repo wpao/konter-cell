@@ -1,45 +1,68 @@
 // components/KeuanganList.tsx
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
-  getKeuangan,
+  // getKeuangan,
   deleteTransaksi,
   editTransaksi,
-  type KeuanganItem,
+  // type KeuanganItem,
 } from "../services/keuangan.service";
 
-export default function KeuanganList() {
-  useEffect(() => {
-    loadData();
-  }, []);
+type Props = {
+  transaksi: KeuanganItem[];
+};
 
-  const [data, setData] = useState<KeuanganItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [editData, setEditData] = useState<any>(null);
-  const [openEdit, setOpenEdit] = useState(false);
+export interface KeuanganItem {
+  id: string;
+  beli: boolean;
+  kategori: string;
+  nama: string;
+  harga: number;
+  jumlah: number;
+  total: number;
+  createdAt: string;
+}
+
+export default function KeuanganList({ transaksi }: Props) {
   const kategoriList = ["UANG ES", "UANG TOKO", "UANG KONTER"];
 
-  const loadData = async () => {
-    try {
-      const result = await getKeuangan();
-      console.log("Data sss:", result);
-      setData(result);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const transaksiData = transaksi.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+  );
 
-  if (loading) {
-    return <div className="rounded-2xl bg-white p-4 shadow">Loading...</div>;
-  }
+  // ===============================
+  // useEffect(() => {
+  //   loadData();
+  // }, []);
 
-  if (data.length === 0) {
-    return (
-      <div className="rounded-2xl bg-white p-4 shadow">Belum ada data</div>
-    );
-  }
+  // console.log("Data transaksi:", transaksi);
+
+  // const [data, setData] = useState<KeuanganItem[]>([]);
+  // const [loading, setLoading] = useState(true);
+  const [editData, setEditData] = useState<any>(null);
+  const [openEdit, setOpenEdit] = useState(false);
+
+  // const loadData = async () => {
+  //   try {
+  //     const result = await getKeuangan();
+  //     console.log("Data sss:", result);
+  //     setData(result);
+  //   } catch (error) {
+  //     console.error(error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // if (loading) {
+  //   return <div className="rounded-2xl bg-white p-4 shadow">Loading...</div>;
+  // }
+
+  // if (data.length === 0) {
+  //   return (
+  //     <div className="rounded-2xl bg-white p-4 shadow">Belum ada data</div>
+  //   );
+  // }
 
   const handleDelete = async (id: string) => {
     const confirmDelete = window.confirm("Yakin ingin menghapus data?");
@@ -54,7 +77,7 @@ export default function KeuanganList() {
   };
 
   const handleEdit = (id: any) => {
-    const item = data.find((item) => item.id === id);
+    const item = transaksi.find((item) => item.id === id);
 
     if (!item) return;
 
@@ -124,7 +147,7 @@ export default function KeuanganList() {
         </thead>
 
         <tbody>
-          {data.map((item) => (
+          {transaksiData.map((item) => (
             // <tr key={item.id} className="border-t hover:bg-slate-50">
             // ==============================
             // <tr
@@ -195,14 +218,6 @@ export default function KeuanganList() {
                 <option value="false">Jual</option>
               </select>
 
-              {/* <input
-                name="kategori"
-                value={editData.kategori}
-                onChange={handleChange}
-                placeholder="Kategori"
-                className="w-full rounded border p-2"
-              /> */}
-
               <select
                 name="kategori"
                 value={editData.kategori}
@@ -246,7 +261,6 @@ export default function KeuanganList() {
               />
 
               <input
-                // value={editData.total}
                 value={
                   editData.total ? editData.total.toLocaleString("id-ID") : ""
                 }

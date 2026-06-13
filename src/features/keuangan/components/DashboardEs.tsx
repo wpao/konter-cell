@@ -1,17 +1,20 @@
-import { useQuery } from "@tanstack/react-query";
-import { getKeuangan } from "../services/keuangan.service";
+type Props = {
+  transaksi: Transaksi[];
+};
 
-export default function DashboardEs() {
-  const { data = [], isLoading } = useQuery({
-    queryKey: ["transaksi"],
-    queryFn: getKeuangan,
-  });
+export interface Transaksi {
+  id: string;
+  beli: boolean;
+  kategori: string;
+  nama: string;
+  harga: number;
+  jumlah: number;
+  total: number;
+  createdAt: string;
+}
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  const transaksiEs = data.filter((item) => item.kategori === "UANG ES");
+export default function DashboardEs({ transaksi }: Props) {
+  const transaksiEs = transaksi.filter((item) => item.kategori === "UANG ES");
 
   const totalJual = transaksiEs
     .filter((item) => !item.beli)
@@ -40,6 +43,7 @@ export default function DashboardEs() {
       <h1 className="text-lg font-bold">ES</h1>
 
       <div>Transaksi : {jumlahTransaksi}</div>
+      {/* <div>Transaksi : {jumlahTransaksi}</div> */}
       <div>Modal : Rp {totalModal.toLocaleString("id-ID")}</div>
       <div>Jual : Rp {totalJual.toLocaleString("id-ID")}</div>
       <div>Laba : Rp {laba.toLocaleString("id-ID")}</div>
@@ -47,9 +51,3 @@ export default function DashboardEs() {
     </div>
   );
 }
-
-/*
-12 * 5 = 60
-3 * 8 = 24
-60 - 24 = 36
-*/

@@ -58,12 +58,12 @@ export const router = createBrowserRouter([
         path: "reports",
         element: <div>Report Page</div>,
       },
+      // {
+      //   path: "finance",
+      //   element: <div>Finance Page</div>,
+      // },
       {
         path: "finance",
-        element: <div>Finance Page</div>,
-      },
-      {
-        path: "keuangan",
         element: <KeuanganPage />,
       },
     ],
