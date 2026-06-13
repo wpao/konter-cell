@@ -1,49 +1,95 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Indomie Goreng",
-      "price": 3500,
-      "stock": 100
-    },
-    {
-      "id": "2",
-      "name": "Teh Botol",
-      "price": 5000,
-      "stock": 50
-    },
-    {
-      "name": "XL 2000",
-      "price": 4000,
-      "stock": 1,
-      "id": "B4iqkVxuZ9A"
-    },
-    {
-      "name": "CHARGE 5000",
-      "price": 7000,
-      "stock": 1,
-      "id": "WAxDdaihkTI"
-    },
-    {
-      "name": "Hahs 100",
-      "price": 1000,
-      "stock": 1,
-      "id": "OsbMSJlMefc"
-    },
-    {
-      "name": "tes 1000",
-      "price": 2000,
+      "id": "3",
+      "name": "Accel Data",
+      "sku": "S2500333",
+      "category": "Aces",
+      "price": 5000000,
       "stock": 2,
-      "id": "XbgWXVCoqYw"
+      "image": "https://picsum.photos/200?3"
     },
     {
-      "name": "Dd 1000",
-      "price": 2000,
-      "stock": 22,
-      "id": "MZOORO7PT7o"
+      "name": "XL 10000",
+      "sku": "",
+      "category": "Pulsa Bank",
+      "price": 12000,
+      "stock": 5,
+      "image": "",
+      "id": "Y6op8aEKymU"
     }
   ],
-  "sales": [],
-  "customers": [],
+  "transaksi": [
+    {
+      "id": "e6rOj-haY8k",
+      "beli": false,
+      "kategori": "UANG ES",
+      "nama": "ES",
+      "harga": 8000,
+      "jumlah": 2,
+      "total": 16000,
+      "createdAt": "2026-06-13T07:05:55.337Z"
+    },
+    {
+      "id": "EkGs3ttZee0",
+      "beli": false,
+      "kategori": "UANG KONTER",
+      "nama": "XL 5 GB",
+      "harga": 15000,
+      "jumlah": 2,
+      "total": 30000,
+      "createdAt": "2026-06-13T07:20:02.430Z"
+    },
+    {
+      "id": "1zj8vY5kDlQ",
+      "beli": false,
+      "kategori": "UANG TOKO",
+      "nama": "Air Cleo",
+      "harga": 5000,
+      "jumlah": 6,
+      "total": 30000,
+      "createdAt": "2026-06-13T07:28:09.735Z"
+    },
+    {
+      "id": "B-RlMc7M_Vk",
+      "beli": false,
+      "kategori": "UANG KONTER",
+      "nama": "DANA",
+      "harga": 50000,
+      "jumlah": 1,
+      "total": 50000,
+      "createdAt": "2026-06-13T07:29:15.524Z"
+    },
+    {
+      "id": "UsL4FKo9010",
+      "beli": false,
+      "kategori": "UANG KONTER",
+      "nama": "XL 10 GB",
+      "harga": 20000,
+      "jumlah": 1,
+      "total": 20000,
+      "createdAt": "2026-06-13T09:51:01.131Z"
+    },
+    {
+      "id": "rYLLwOMwbX0",
+      "beli": false,
+      "kategori": "UANG KONTER",
+      "nama": "XL 10 GB",
+      "harga": 20000,
+      "jumlah": 1,
+      "total": 20000,
+      "createdAt": "2026-06-13T09:51:40.095Z"
+    },
+    {
+      "id": "oNbn6cee5i0",
+      "beli": false,
+      "kategori": "UANG KONTER",
+      "nama": "XL 5 GB",
+      "harga": 15000,
+      "jumlah": 1,
+      "total": 15000,
+      "createdAt": "2026-06-13T10:10:52.599Z"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

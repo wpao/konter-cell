@@ -1,31 +1,74 @@
-import ProductForm from "../components/ProductForm";
+import { Filter, Search } from "lucide-react";
+
+import FloatingAddButton from "../components/FloatingAddButton";
+import ProductDrawer from "../components/ProductDrawer";
+import ProductEditModal from "../components/ProductEditModal";
+import ProductFilter from "../components/ProductFilter";
 import ProductTable from "../components/ProductTable";
 
-import { productApi } from "../api/productApi";
-import { useProducts } from "../hooks/useProducts";
-
-import type { Product } from "../types/product";
+import { useProductActions } from "../hooks/useProductActions";
+import { useProductFilter } from "../hooks/useProductFilter";
+import { useProductPage } from "../hooks/useProductPage";
+import { useProductQuery } from "../hooks/useProductQuery";
 
 export default function ProductPage() {
-  const { products, reload } = useProducts();
+  const page = useProductPage();
 
-  const handleCreate = async (payload: Product) => {
-    await productApi.create(payload);
-    reload();
-  };
+  const { data = [] } = useProductQuery();
 
-  const handleDelete = async (id: string) => {
-    await productApi.delete(id);
-    reload();
-  };
+  const actions = useProductActions(page);
+
+  const { search, setSearch, category, setCategory, filteredProducts } =
+    useProductFilter(data);
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Produk</h1>
+    <div className="mx-auto max-w-md p-4">
+      <div className="mb-4 flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Produk</h1>
+        <FloatingAddButton onClick={page.openDrawer} />
+      </div>
 
-      <ProductForm onSubmit={handleCreate} />
+      <div className="mb-4 flex gap-2">
+        <div className="relative flex-1">
+          <Search size={18} className="absolute left-3 top-3 text-gray-400" />
 
-      <ProductTable products={products} onDelete={handleDelete} />
+          <input
+            type="text"
+            placeholder="Cari produk..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full rounded-xl border p-2 pl-10"
+          />
+        </div>
+
+        <button className="flex items-center gap-2 rounded-xl border px-4">
+          <Filter size={18} />
+          Filter
+        </button>
+      </div>
+
+      <div className="mb-4">
+        <ProductFilter value={category} onChange={setCategory} />
+      </div>
+
+      <ProductTable
+        products={filteredProducts}
+        onEdit={page.openEdit}
+        onDelete={actions.deleteProduct}
+      />
+
+      <ProductDrawer
+        open={page.drawerOpen}
+        onClose={page.closeDrawer}
+        onSubmit={actions.createProduct}
+      />
+
+      <ProductEditModal
+        open={page.editOpen}
+        product={page.selectedProduct}
+        onClose={page.closeEdit}
+        onSave={actions.updateProduct}
+      />
     </div>
   );
 }

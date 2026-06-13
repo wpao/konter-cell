@@ -19,6 +19,28 @@ src/features/product/
 └── types/
 └── product.ts
 
+<!--  -->
+
+src/features/dashboard
+├── api
+│ └── dashboardApi.ts
+│
+├── components
+│ ├── DashboardHeader.tsx
+│ ├── SummaryCard.tsx
+│ ├── QuickAction.tsx
+│ ├── TransactionItem.tsx
+│ └── BottomNavigation.tsx
+│
+├── hooks
+│ └── useDashboard.ts
+│
+├── pages
+│ └── DashboardPage.tsx
+│
+└── types
+└── dashboard.types.ts
+
 ### CRUD Ngrok =========
 
 Saat ini proxy meneruskan:
@@ -107,3 +129,5 @@ product
 │ └── ProductPage.tsx
 └── types
 └── product.ts
+
+<!-- membiasakan menggunakan axios dan TanStack Query. -->

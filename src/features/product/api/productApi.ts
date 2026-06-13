@@ -1,7 +1,5 @@
-// import { api } from "@/services/axios";
-import { api } from "../../../services/axios";
-
-import type { Product } from "../types/product";
+import { api } from "../../../lib/axios";
+import type { Product, ProductPayload } from "../types/product";
 
 export const productApi = {
   getAll: async (): Promise<Product[]> => {
@@ -9,19 +7,22 @@ export const productApi = {
     return data;
   },
 
-  create: async (payload: Product) => {
+  getById: async (id: string): Promise<Product> => {
+    const { data } = await api.get(`/products/${id}`);
+    return data;
+  },
+
+  create: async (payload: ProductPayload): Promise<Product> => {
     const { data } = await api.post("/products", payload);
-
     return data;
   },
 
-  update: async (id: string, payload: Product) => {
+  update: async (id: string, payload: ProductPayload): Promise<Product> => {
     const { data } = await api.put(`/products/${id}`, payload);
-
     return data;
   },
 
-  delete: async (id: string) => {
+  remove: async (id: string): Promise<void> => {
     await api.delete(`/products/${id}`);
   },
 };

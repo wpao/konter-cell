@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+.next
+.vscode
+\.log
+coverage
+package-lock.json
+pnpm-lock.yaml
