@@ -91,5 +91,80 @@
       "createdAt": "2026-06-13T10:10:52.599Z"
     }
   ],
+  "pelanggan": [],
+  "dataKonter": [
+    {
+      "id": "e6rOj-haY8k",
+      "nomor": "225845878965",
+      "nama": "XL",
+      "harga": 8000,
+      "admin": 2000,
+      "createdAt": "2026-06-13T07:05:55.337Z"
+    },
+    {
+      "nomor": "081987456321",
+      "nama": "xl",
+      "harga": 20,
+      "admin": 2,
+      "createdAt": "2026-07-06T13:04:39.776Z",
+      "id": "H_-cwewGOi4"
+    },
+    {
+      "nomor": "741",
+      "nama": "tel",
+      "harga": 20,
+      "admin": 2,
+      "createdAt": "2026-07-06T13:07:36.516Z",
+      "id": "S1b_xVhuy-Y"
+    },
+    {
+      "nomor": "258",
+      "nama": "tel",
+      "harga": 20,
+      "admin": 2,
+      "createdAt": "2026-07-06T13:07:59.760Z",
+      "id": "fa9mM1NnGjw"
+    },
+    {
+      "nomor": "12",
+      "nama": "dana",
+      "harga": 23,
+      "admin": 3,
+      "createdAt": "2026-07-06T13:14:47.120Z",
+      "id": "kik7bZ1CX7o"
+    },
+    {
+      "nomor": "25",
+      "nama": "dana",
+      "harga": 50,
+      "admin": 5,
+      "createdAt": "2026-07-06T13:15:02.878Z",
+      "id": "D-iztx1vjso"
+    },
+    {
+      "nomor": "33",
+      "nama": "top",
+      "harga": 40,
+      "admin": 4,
+      "createdAt": "2026-07-06T13:25:02.848Z",
+      "id": "oz5Jh3PHgOc"
+    },
+    {
+      "nomor": "98",
+      "nama": "ty",
+      "harga": 0,
+      "admin": 7,
+      "createdAt": "2026-07-06T13:25:30.174Z",
+      "id": "cLjcXnfOghE"
+    },
+    {
+      "nomor": "67",
+      "nama": "dana",
+      "harga": 3,
+      "admin": 2,
+      "createdAt": "2026-07-06T13:26:17.327Z",
+      "id": "QB2pzY3zNsA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

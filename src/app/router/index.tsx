@@ -36,6 +36,8 @@ import DashboardPage from "../../features/dashboard/pages/DashboardPage";
 import CashierPage from "../../features/cashier/pages/CashierPage";
 import ProductPage from "../../features/product/pages/ProductPage";
 import KeuanganPage from "../../features/keuangan/keuanganPage";
+import FormPelanggan from "../../features/cashier/components/FormPelanggan";
+import KonterPage from "../../features/konter/KonterPage";
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +68,14 @@ export const router = createBrowserRouter([
         path: "finance",
         element: <KeuanganPage />,
       },
+      {
+        path: "form-pelanggan",
+        element: <FormPelanggan />,
+      },
     ],
+  },
+  {
+    path: "w",
+    element: <KonterPage />,
   },
 ]);

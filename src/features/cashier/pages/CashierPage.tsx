@@ -1,3 +1,9 @@
+import QRCodePage from "../components/QRCode";
+
 export default function CashierPage() {
-  return <h1>Cashier</h1>;
+  return (
+    <>
+      <QRCodePage />
+    </>
+  );
 }
